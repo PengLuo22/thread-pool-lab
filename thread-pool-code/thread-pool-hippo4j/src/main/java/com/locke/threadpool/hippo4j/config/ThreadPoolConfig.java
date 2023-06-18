@@ -39,4 +39,16 @@ public class ThreadPoolConfig {
         return messageProduceDynamicExecutor;
     }
 
+    @Bean
+    @DynamicThreadPool
+    public ThreadPoolExecutor messageProduceDynamicExecutor2() {
+        String threadPoolId = "message-produce-1";
+        ThreadPoolExecutor messageProduceDynamicExecutor = ThreadPoolBuilder.builder()
+                .threadFactory(threadPoolId)
+                .threadPoolId(threadPoolId)
+                .dynamicPool()
+                .build();
+        return messageProduceDynamicExecutor;
+    }
+
 }

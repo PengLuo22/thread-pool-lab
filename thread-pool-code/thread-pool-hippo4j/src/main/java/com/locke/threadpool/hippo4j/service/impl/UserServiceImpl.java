@@ -19,12 +19,12 @@ import java.util.concurrent.ThreadPoolExecutor;
 public class UserServiceImpl implements UserService {
 
     @Resource
-    private ThreadPoolExecutor messageConsumeDynamicExecutor;
+    private ThreadPoolExecutor messageProduceDynamicExecutor2;
 
     @Override
     public int batchInsert(List<User> userList) {
 
-        messageConsumeDynamicExecutor.execute(()-> {
+        messageProduceDynamicExecutor2.execute(()-> {
             // 模拟做了insert操作
             for (User user : userList) {
 //                System.out.println(user);

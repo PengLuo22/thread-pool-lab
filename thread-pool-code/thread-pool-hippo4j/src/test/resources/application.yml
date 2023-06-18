@@ -4,7 +4,7 @@ spring:
     active: dev
   application:
     # 服务端创建的项目 id 需要与 application.name 保持一致
-    name: dynamic-threadpool-example
+    name: stress-test-thread-pool-config
   dynamic:
     thread-pool:
       # 服务端地址
@@ -14,7 +14,7 @@ spring:
       # 密码
       password: 123456
       # 租户 id, 对应 tenant 表
-      namespace: prescription
+      namespace: demo
       # 项目 id, 对应 item 表
       item-id: ${spring.application.name}
       # 动态线程池监控相关配置
